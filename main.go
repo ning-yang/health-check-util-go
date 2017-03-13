@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-var addr = flag.String("addr", ":1818", "learn to address:port")
+var addr = flag.String("addr", ":1819", "learn to address:port")
 
 func main() {
 	flag.Parse()
