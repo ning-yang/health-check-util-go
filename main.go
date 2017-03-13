@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/user"
 	"path"
+	"time"
 )
 
 func main() {
@@ -24,7 +25,9 @@ func main() {
 		scanner.Scan()
 		text = scanner.Text()
 		if text != "q" {
-			fmt.Println("Writing to", replyFilePath, ":", text)
+			fmt.Println(
+				time.Now().UTC().Format("2006-01-02 15:04:05"),
+				": Writing to", replyFilePath, "-", text)
 			ioutil.WriteFile(replyFilePath, []byte(text), 0644)
 		}
 	}
